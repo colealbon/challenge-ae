@@ -13,9 +13,8 @@
 
 <script>
     var socket = io();
-    var LATEST_BLOCKTIME;
     socket.on('pulsetime', function(timestamp) {
-        const timestampStr = new Date(timestamp).toLocaleString();
+        const timestampStr = new Date(timestamp * 1000).toLocaleString();
         document.getElementById('pulsetime').innerHTML = timestampStr;
     });
 

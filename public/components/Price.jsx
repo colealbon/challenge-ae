@@ -7,6 +7,8 @@ var Price = React.createClass({
           document.getElementById('price').innerHTML = 'Current Price: $' + data.price.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,') +
                ' (as of ' + new Date(data.time * 1000).toLocaleString() + ')';
           document.getElementById('total').innerHTML = '$' + (data.price * document.getElementById('amount').value).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
+          document.getElementById('unitprice').value = data.price.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,')
+
       });
       self.setState({ mounted: true });
     },

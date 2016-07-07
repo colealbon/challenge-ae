@@ -7,3 +7,4 @@ skills test from the Scottsdale area
 * ```npm install;```  
 * ```cp config/options.js.example config/options.js;```  
 * ```npm test;``` or ```mocha --ui=tdd --harmony test``` (optional)
+* ```node index;```

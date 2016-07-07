@@ -9,4 +9,7 @@
     <script src="https://fb.me/react-15.0.1.js"></script>
     <script src="https://fb.me/react-dom-15.0.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+    <script src="components/Price.jsx" type="text/babel"></script>
+    <script src="components/TradeEvent.jsx" type="text/babel"></script>
+    <script src="components/TradeHistory.jsx" type="text/babel"></script>
 </head>

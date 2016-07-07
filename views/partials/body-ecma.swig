@@ -19,4 +19,3 @@
     });
 
 </script>
-<script src="components/Price.jsx" type="text/babel"></script>

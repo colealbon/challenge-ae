@@ -25,7 +25,9 @@ function* index() {
         'timestamp': new Date().getTime(),
         'app_name': config.app_name,
         'app_host': config.app_host,
-        'http_port': config.http_port
+        'http_port': config.http_port,
+        'amount_currency': '100',
+        'amount_asset': '0'
     })
 }
 
@@ -45,8 +47,8 @@ io.on('connection', function(socket) {
     setInterval( function fakeprice() {
          io.emit('price', {
                 label: 'sprocket',
-                raw_value: 100 + Math.random(),
-                calc_value: 100 + Math.random().toFixed(7),
+                raw_value: 10 + Math.random(),
+                calc_value: 10 + Math.random().toFixed(7),
                 key: 'sprocket',
                 source: 'fake',
                 time: parseInt(new Date().getTime() / 1000, 10)

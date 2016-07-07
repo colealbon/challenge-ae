@@ -25,7 +25,7 @@
   <td>
   Total:
   </td>
-  <td>xx.xx</td>
+  <td><div id="total">xx.xx</div></td>
   </td>
   </tr>
   </table>

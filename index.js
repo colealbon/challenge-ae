@@ -50,15 +50,19 @@ function* trade() {
     // see if they have enough money to do tx
     // flow control here is bad
     if (postedcontent.action === 'buy') {
+        // user should have enough money
         if ((postedcontent.amount) * PRICE > USER_CURRENCY) {
             postedcontent.amount = 0;
             postedcontent.action = 'insufficient funds';
         }
+
+        // price should not have gone up in flight
         if (postedcontent.unitprice < PRICE) {
             postedcontent.amount = 0;
             postedcontent.action = 'price changed in flight';
         }
     } else {
+        // user should have enough sprockets
         if (postedcontent.amount > USER_SPROCKETS) {
             postedcontent.amount = 0;
             postedcontent.action = 'not enough sprocket';
@@ -66,6 +70,8 @@ function* trade() {
     }
 
     // update user account
+    // flow control here is bad, because checks above may not be finished
+    // use "koa await" before real money gets involved
     (postedcontent.action === 'buy') ?
         USER_SPROCKETS = (USER_SPROCKETS || 0) + parseInt(postedcontent.amount) :
         USER_SPROCKETS = (USER_SPROCKETS || 0) - parseInt(postedcontent.amount) ;

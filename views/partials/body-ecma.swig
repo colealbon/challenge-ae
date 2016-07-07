@@ -20,6 +20,4 @@
     });
 
 </script>
-
-<script src="components/Timestamp.jsx" type="text/babel"></script>
 <script src="components/Price.jsx" type="text/babel"></script>

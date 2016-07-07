@@ -7,7 +7,7 @@ var Price = React.createClass({
           // This is not proper: it circumvents efficient REACT DOM update.
           // setstate is preferable but author forgot how to set up
           // react children
-          document.getElementById('price').innerHTML = 'Current Price: ' + data.raw_value.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,') +
+          document.getElementById('price').innerHTML = 'Current Price: $' + data.raw_value.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,') +
                ' (as of ' + new Date(data.time * 1000).toLocaleString() + ')';
           document.getElementById('total').innerHTML = '$' + (data.raw_value * document.getElementById('amount').value).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
       });
